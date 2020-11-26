@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  redis:
+    host: 124.70.193.255
+    password: 123456
+  rabbitmq:
+    username: user
+    password: 123456
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /user
+    publisher-confirm-type:
+  data:
+    mongodb:
+      uri:  mongodb://localhost:27017/mydb
+
+
+user:
+  name: shaomin
+  age: 12

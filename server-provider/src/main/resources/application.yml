@@ -1,0 +1,7 @@
+server:
+  port: 8000
+dubbo:
+  application:
+    name: server-provider
+  registry:
+    address: zookeeper://124.70.192.255:2181
