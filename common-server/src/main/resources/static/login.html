@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+<form id="loginForm">
+    <input type="text" name="username" id="username">
+    <input type="password" name="password" id="password">
+    <button type="button" name="login" id="login">登陆</button>
+</form>
+</body>
+<script type="text/javascript">
+/*
+
+     $("#login").click(function() {
+         $.ajax({
+             async : true,
+             type: "post",
+             dataType : "json",
+             url: "localhost:8081/web/user/login",
+             data:{},
+             error: function (XMLHttpRequest, textStatus, errorThrown) {//请求失败处理函数
+                 alert("shibai");
+             },
+             success:function(data){ //请求成功后处理函数。
+             }
+         });
+    });*/
+
+     $("#login").click(function() {
+         var formData = $("#loginForm").serialize();
+         console.log(formData);
+         alert(formData);
+         $.ajax({
+             url: "localhost:8081/web/user/login",
+
+             dataType: "json",
+             type: "post",
+             data: formData,
+
+             success: function(result) {  //这里就是我出错的地方
+                 alert(result.msg);
+             },
+             error: function(data) {
+                 alert("请求出错");
+                 alert(data);
+             }
+         });
+     });
+</script>
+
+</html>`
+
