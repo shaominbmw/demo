@@ -1,8 +1,10 @@
 package com.demo.service;
 
 import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.stereotype.Component;
 
 @org.springframework.stereotype.Service
+@Component
 public class StaffService {
 
     @Reference
